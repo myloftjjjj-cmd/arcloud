@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TouchControls } from "@/components/TouchControls";
+import logo from "@/assets/arcloudgaming_logo_4156fc1f_0.png";
 
 type Game = {
   id: number;
@@ -40,7 +41,8 @@ const Index = () => {
       {/* Nav */}
       <header className="sticky top-0 z-10 border-b border-border bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <span className="text-lg font-bold tracking-tight">
+          <span className="flex items-center gap-2 text-lg font-bold tracking-tight">
+            <img src={logo} alt="ARCloudGaming logo" className="h-8 w-8 rounded-lg" />
             AR<span className="text-primary">CloudGaming</span>
           </span>
           <nav className="hidden gap-6 text-sm text-muted-foreground md:flex">
