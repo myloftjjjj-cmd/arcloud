@@ -8,6 +8,7 @@ type Game = {
   genre: string;
   ping: string;
   gradient: string;
+  note?: string;
 };
 
 const games: Game[] = [
@@ -17,6 +18,10 @@ const games: Game[] = [
   { id: 4, title: "Iron Court", platform: "PS5 Controller", genre: "Fighting", ping: "19 ms", gradient: "from-sky-500 to-blue-800" },
   { id: 5, title: "Neon Tide", platform: "PC", genre: "Shooter", ping: "22 ms", gradient: "from-rose-500 to-red-800" },
   { id: 6, title: "Lost Horizon", platform: "Xbox Controller", genre: "Adventure", ping: "35 ms", gradient: "from-violet-500 to-purple-800" },
+  { id: 7, title: "Minecraft: Java Edition", platform: "PC", genre: "Sandbox", ping: "26 ms", gradient: "from-green-600 to-lime-800", note: "Not on GeForce NOW. Needs a separate Java account." },
+  { id: 8, title: "Minecraft: Bedrock Edition", platform: "PC & Controller", genre: "Sandbox", ping: "23 ms", gradient: "from-lime-500 to-emerald-700", note: "Streams only via Xbox PC Game Pass or Microsoft Store." },
+  { id: 9, title: "Minecraft: Education Edition", platform: "PC", genre: "Learning", ping: "30 ms", gradient: "from-cyan-500 to-teal-800", note: "Not available on cloud gaming services." },
+  { id: 10, title: "Minecraft: Legacy Console Edition", platform: "Xbox Controller", genre: "Sandbox", ping: "29 ms", gradient: "from-stone-500 to-stone-800", note: "Console-only. Not available on cloud gaming services." },
 ];
 
 const usesController = (game: Game) => game.platform.includes("Controller");
@@ -118,6 +123,9 @@ const Index = () => {
                 <p className="text-xs text-muted-foreground">
                   {game.platform} · {game.genre}
                 </p>
+                {game.note && (
+                  <p className="mt-2 text-[11px] text-muted-foreground">{game.note}</p>
+                )}
                 {usesController(game) && (
                   <span className="mt-2 inline-block rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground">
                     On-screen buttons
