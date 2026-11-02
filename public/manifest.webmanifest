@@ -1,0 +1,11 @@
+{
+  "name": "ARCloudGaming",
+  "short_name": "ARCloudGaming",
+  "description": "Play PC and controller games on your phone with cloud gaming and on-screen controls.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#0b0b14",
+  "theme_color": "#0b0b14"
+}
