@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TouchControls } from "@/components/TouchControls";
 
 type Game = {
   id: number;
@@ -18,9 +19,11 @@ const games: Game[] = [
   { id: 6, title: "Lost Horizon", platform: "Xbox Controller", genre: "Adventure", ping: "35 ms", gradient: "from-violet-500 to-purple-800" },
 ];
 
+const usesController = (game: Game) => game.platform.includes("Controller");
+
 const steps = [
   { title: "Pick a game", text: "Browse your library or any game you already own on PC or console." },
-  { title: "Connect your controller", text: "Pair a Bluetooth controller to your phone in seconds." },
+  { title: "Use on-screen buttons", text: "Controller games get a full gamepad right on your screen. No hardware needed." },
   { title: "Play anywhere", text: "The game runs in the cloud and streams live to your phone screen." },
 ];
 
@@ -81,10 +84,14 @@ const Index = () => {
                 <h2 className="mt-1 text-2xl font-bold">{selected.title}</h2>
                 <p className="text-sm opacity-80">{selected.platform}</p>
               </div>
-              <div className="flex items-center justify-between text-sm">
-                <span className="rounded-full bg-black/30 px-3 py-1">Controller: Connected</span>
-                <span className="rounded-full bg-black/30 px-3 py-1">Menu</span>
-              </div>
+              {usesController(selected) ? (
+                <TouchControls />
+              ) : (
+                <div className="flex items-center justify-between text-sm">
+                  <span className="rounded-full bg-black/30 px-3 py-1">Touch & mouse</span>
+                  <span className="rounded-full bg-black/30 px-3 py-1">Menu</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -111,6 +118,11 @@ const Index = () => {
                 <p className="text-xs text-muted-foreground">
                   {game.platform} · {game.genre}
                 </p>
+                {usesController(game) && (
+                  <span className="mt-2 inline-block rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground">
+                    On-screen buttons
+                  </span>
+                )}
               </div>
             </button>
           ))}
