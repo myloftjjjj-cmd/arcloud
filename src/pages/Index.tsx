@@ -41,7 +41,7 @@ const Index = () => {
       <header className="sticky top-0 z-10 border-b border-border bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <span className="text-lg font-bold tracking-tight">
-            Cloud<span className="text-primary">Play</span>
+            AR<span className="text-primary">CloudGaming</span>
           </span>
           <nav className="hidden gap-6 text-sm text-muted-foreground md:flex">
             <a href="#library" className="hover:text-foreground">Library</a>
@@ -169,7 +169,7 @@ const Index = () => {
       </section>
 
       <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} CloudPlay. All rights reserved.
+        © {new Date().getFullYear()} ARCloudGaming. All rights reserved.
       </footer>
     </div>
   );

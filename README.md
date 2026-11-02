@@ -1,4 +1,4 @@
-# CloudPlay
+# ARCloudGaming
 
 Play PC and controller games on your phone with cloud gaming and on-screen controls.
 
@@ -22,8 +22,8 @@ Play PC and controller games on your phone with cloud gaming and on-screen contr
 Requirements: Node.js 18+ and npm.
 
 ```bash
-git clone https://github.com/<your-username>/cloudplay.git
-cd cloudplay
+git clone https://github.com/<your-username>/arcloudgaming.git
+cd arcloudgaming
 npm install
 npm run dev
 ```
